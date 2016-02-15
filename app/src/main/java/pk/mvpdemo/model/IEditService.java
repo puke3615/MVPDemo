@@ -7,7 +7,7 @@ import pk.mvpdemo.entity.Record;
  * @version 2016/2/15
  * @Mark
  */
-public interface IEditModel {
+public interface IEditService {
 
     boolean save(Record record);
 

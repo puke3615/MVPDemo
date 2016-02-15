@@ -3,14 +3,14 @@ package pk.mvpdemo.view;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import pk.mvpdemo.view.base.IToast;
+import pk.mvpdemo.view.base.IView;
 
 /**
  * @author zijiao
  * @version 2016/2/15
  * @Mark 视图交互层，该接口直接与EditActivity交互
  */
-public interface IEditView extends IToast {
+public interface IEditView extends IView {
 
     View getView(LayoutInflater inflater);
 

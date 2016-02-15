@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import javax.inject.Inject;
+
 import pk.mvpdemo.R;
 import pk.mvpdemo.prensenter.IEditPresenter;
 import pk.mvpdemo.view.base.BaseView;
@@ -22,7 +24,9 @@ public class EditView extends BaseView implements IEditView {
     private Button mSave, mClear;
     private IEditPresenter mListener;
 
+    @Inject
     public EditView(Activity activity) {
+        super(activity);
         mListener = (IEditPresenter) activity;
     }
 

@@ -8,18 +8,25 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import javax.inject.Inject;
+
 import pk.mvpdemo.app.MVPApplication;
 import pk.mvpdemo.entity.Record;
-import pk.mvpdemo.model.IEditModel;
+import pk.mvpdemo.model.IEditService;
 
 /**
  * @author zijiao
  * @version 2016/2/15
  * @Mark
  */
-public class FileEditModel implements IEditModel {
+public class FileEditService implements IEditService {
 
     private static final String SAVE_PATH = MVPApplication.context().getFileStreamPath("record.dat").getAbsolutePath();
+
+    @Inject
+    public FileEditService() {
+
+    }
 
     @Override
     public boolean save(Record record) {
