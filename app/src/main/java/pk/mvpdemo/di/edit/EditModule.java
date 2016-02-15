@@ -33,8 +33,8 @@ public class EditModule {
 
     @Provides
     @ActivityScope
-    IEditService provideEditService(FileEditService fileEditService) {
-        return fileEditService;
+    IEditService provideEditService(FileEditService editService) {
+        return editService;
     }
 
     @Provides
