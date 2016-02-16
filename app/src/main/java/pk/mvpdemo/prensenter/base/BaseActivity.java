@@ -12,7 +12,7 @@ import pk.mvpdemo.di.application.AppComponent;
  * @version 2016/2/15
  * @Mark
  */
-public abstract class BaseActivity<T> extends Activity implements IComponent<T> {
+public abstract class BaseActivity<T> extends Activity {
 
     private AppComponent mAppComponent;
 
@@ -20,11 +20,13 @@ public abstract class BaseActivity<T> extends Activity implements IComponent<T> 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAppComponent = ((MVPApplication) getApplication()).getAppComponent();
-        Object component = getComponent();
+        T component = getComponent();
         if (component instanceof IInject) {
             ((IInject) component).inject(this);
         }
     }
+
+    protected abstract T getComponent();
 
     public AppComponent getAppComponent() {
         return mAppComponent;
